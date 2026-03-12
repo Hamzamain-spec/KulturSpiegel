@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beitrag — KulturSpiegel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#FAF7F2;--warm:#F2EDE4;--card:#FFFFFF;--border:#E8E0D4;--ink:#1C1409;--muted:#7A6A55;--light:#AFA090;--gold:#C8933A;--gold-lt:#FBF4E6;--wine:#8B1A2A;--text:#2D2015}
+body{font-family:'Mulish',sans-serif;background:var(--cream);color:var(--ink)}
+header{background:var(--ink);padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{text-decoration:none}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#fff}
+.logo-name strong{font-weight:700;color:var(--gold)}
+nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;justify-content:center}
+nav a{display:block;padding:11px 18px;color:rgba(255,255,255,0.4);text-decoration:none;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s}
+nav a:hover{color:var(--gold)}
+.post-hero{background:var(--ink);padding:80px 40px 88px;position:relative;overflow:hidden}
+.post-hero::before{content:'"';position:absolute;top:20px;left:32px;font-family:'Cormorant Garamond',serif;font-size:240px;color:rgba(200,147,58,0.04);line-height:1;pointer-events:none}
+.post-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
+.post-hero-inner{max-width:800px;margin:0 auto;position:relative}
+.post-breadcrumb{font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:20px;display:flex;align-items:center;gap:6px;font-style:italic}
+.post-breadcrumb a{color:rgba(255,255,255,0.25);text-decoration:none}
+.post-breadcrumb a:hover{color:var(--gold)}
+.post-section{display:inline-flex;align-items:center;gap:8px;font-size:9px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+.post-section::before{content:'';width:20px;height:1px;background:var(--gold)}
+.post-title{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;color:#fff;line-height:1.04;margin-bottom:24px;letter-spacing:-0.5px}
+.post-meta{display:flex;align-items:center;gap:20px;font-size:12px;color:rgba(255,255,255,0.3);padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);font-style:italic}
+.post-meta strong{color:rgba(255,255,255,0.65);font-style:normal}
+.layout{max-width:1100px;margin:52px auto;padding:0 40px;display:grid;grid-template-columns:1fr 270px;gap:36px}
+.main-col{background:var(--card);padding:56px;border:1px solid var(--border)}
+.back-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);text-decoration:none;font-size:10px;font-weight:700;padding:8px 18px;margin-bottom:36px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s}
+.back-btn:hover{border-color:var(--gold);color:var(--gold)}
+.article-body{font-size:17px;line-height:1.95;color:var(--text);font-weight:300}
+.article-body p{margin-bottom:28px}
+.article-body h2{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--ink);margin:56px 0 16px;letter-spacing:-0.3px;padding-bottom:12px;border-bottom:1px solid var(--border);position:relative}
+.article-body h2::after{content:'';position:absolute;bottom:-1px;left:0;width:32px;height:1px;background:var(--gold)}
+.article-body h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);margin:32px 0 12px;font-style:italic}
+.article-body a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,147,58,0.3);font-weight:500}
+.article-body a:hover{color:var(--ink);border-color:var(--ink)}
+.article-body ul,.article-body ol{padding-left:28px;margin-bottom:24px}
+.article-body li{margin-bottom:8px;line-height:1.8}
+blockquote{background:var(--gold-lt);border-left:3px solid var(--gold);padding:24px 30px;margin:36px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);line-height:1.55;letter-spacing:0.2px}
+.sidebar{display:flex;flex-direction:column;gap:18px}
+.widget{background:var(--card);border:1px solid var(--border);overflow:hidden}
+.wh{background:var(--ink);padding:12px 18px;display:flex;align-items:center;gap:8px}
+.wh-orn{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold)}
+.wh-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.65)}
+.wb{padding:16px 18px}
+.ri{padding:11px 0;border-bottom:1px solid var(--border)}
+.ri:last-child{border-bottom:none;padding-bottom:0}
+.ri:first-child{padding-top:0}
+.ri-section{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
+.ri-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--ink);line-height:1.25;text-decoration:none;display:block;margin-bottom:3px}
+.ri-title:hover{color:var(--gold)}
+.ri-date{font-size:11px;color:var(--light);font-style:italic}
+.not-found{text-align:center;padding:80px;color:var(--muted);grid-column:1/-1}
+footer{background:var(--ink);margin-top:60px;text-align:center;padding:28px;font-size:12px;color:rgba(255,255,255,0.25);font-style:italic}
+footer a{color:rgba(255,255,255,0.25);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--gold)}
+.fl{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#fff;margin-bottom:8px}
+.fl strong{font-weight:700;color:var(--gold)}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><a href="index.html" class="logo"><div class="logo-name">Kultur<strong>Spiegel</strong></div></a></div></header>
+<nav><div class="nav-inner"><a href="index.html">← Start</a><a href="index.html">Literatur</a><a href="index.html">Kunst</a><a href="index.html">Musik</a><a href="index.html">Theater</a><a href="index.html">Film</a></div></nav>
+<div id="post-hero" class="post-hero" style="display:none">
+  <div class="post-hero-inner">
+    <div class="post-breadcrumb"><a href="index.html">KulturSpiegel</a><span>/</span><span id="post-cat-bc">Kultur</span></div>
+    <div class="post-section" id="post-cat">Kultur</div>
+    <div class="post-title" id="post-title"></div>
+    <div class="post-meta">
+      <span>Von <strong id="post-author">Redaktion</strong></span>
+      <span>·</span>
+      <span id="post-date"></span>
+      <span>·</span>
+      <span><strong id="post-read">5 Min.</strong> Lesezeit</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <div class="main-col">
+    <a href="index.html" class="back-btn">← Alle Beiträge</a>
+    <div id="article-body" class="article-body"></div>
+    <div id="not-found" class="not-found" style="display:none"><h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--ink);margin-bottom:8px;font-weight:400">Beitrag nicht gefunden.</h2></div>
+  </div>
+  <aside class="sidebar">
+    <div class="widget"><div class="wh"><div class="wh-orn">✦</div><div class="wh-title">Weitere Beiträge</div></div><div class="wb"><div id="recent-posts"></div></div></div>
+    <div class="widget"><div class="wh"><div class="wh-orn">§</div><div class="wh-title">Über KulturSpiegel</div></div><div class="wb"><p style="font-size:13px;line-height:1.75;color:var(--muted);font-style:italic;font-weight:300">Das deutsche Kulturmagazin für Kunst, Literatur, Musik und Gesellschaft — kritisch, leidenschaftlich, unabhängig.</p></div></div>
+  </aside>
+</div>
+<footer><div class="fl">Kultur<strong>Spiegel</strong></div><p>&copy; 2026 KulturSpiegel &nbsp;|&nbsp;<a href="#">Impressum</a>&nbsp;|&nbsp;<a href="#">Datenschutz</a></p></footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+const SITE_NAME = 'kulturspiegel';
+const GIST_ID = '42ea11087f40fdba423f8eb0f575ac96'; // Same Gist for all sites!
+
+async function loadPost() {
+  try {
+    console.log('Fetching post from Gist ID:', GIST_ID);
+    console.log('Looking for post ID:', id);
+    
+    const rawUrl = `https://gist.githubusercontent.com/Hamzamain-spec/${GIST_ID}/raw/posts.json`;
+    const response = await fetch(rawUrl);
+    
+    if (response.ok) {
+      const allPosts = await response.json();
+      console.log('All posts:', allPosts);
+      
+      const sitePosts = allPosts.filter(post => post.site === SITE_NAME);
+      console.log(`Found ${sitePosts.length} posts for site: ${SITE_NAME}`);
+      
+      const post = sitePosts.find(p => p.id == id);
+      console.log('Found post:', post);
+      
+      if (post) {
+        document.title = post.title + ' — KulturSpiegel';
+        document.getElementById('post-title').textContent = post.title;
+        document.getElementById('post-cat').textContent = post.category || 'Kultur';
+        document.getElementById('post-cat-bc').textContent = post.category || 'Kultur';
+        document.getElementById('post-author').textContent = post.author || 'Redaktion';
+        document.getElementById('post-date').textContent = new Date(post.date).toLocaleDateString('de-DE', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        });
+        
+        const words = post.content.replace(/<[^>]+>/g, '').split(' ').length;
+        document.getElementById('post-read').textContent = Math.max(1, Math.round(words / 200)) + ' Min.';
+        
+        document.getElementById('article-body').innerHTML = post.content;
+        document.getElementById('post-hero').style.display = 'block';
+        
+        // Recent posts
+        const rp = document.getElementById('recent-posts');
+        rp.innerHTML = '';
+        sitePosts.slice().reverse().slice(0, 5).forEach(p => {
+          if (p.id == id) return;
+          rp.innerHTML += `<div class="ri"><div class="ri-section">${p.category || 'Kultur'}</div><a class="ri-title" href="post.html?id=${p.id}">${p.title}</a><div class="ri-date">${new Date(p.date).toLocaleDateString('de-DE')}</div></div>`;
+        });
+      } else {
+        console.log('Post not found for ID:', id);
+        document.getElementById('not-found').style.display = 'block';
+      }
+    } else {
+      console.error('Failed to fetch from Gist:', response.status);
+      document.getElementById('not-found').style.display = 'block';
+    }
+  } catch (error) {
+    console.error('Error loading post:', error);
+    document.getElementById('not-found').style.display = 'block';
+  }
+}
+
+loadPost();
+</script>
+</body>
+</html>
